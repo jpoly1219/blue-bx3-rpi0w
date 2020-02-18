@@ -22,5 +22,3 @@ def parseData(textfile):
     
     data.close()
     newData.close()
-
-parseData()
