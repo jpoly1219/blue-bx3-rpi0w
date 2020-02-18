@@ -10,6 +10,7 @@ def readSerial():
     ser = serial.Serial(SERIAL_PORT, SERIAL_RATE)
 
     while True:
+        print("1 ")
         data = ser.readline().decode()
         print(data)
         file.write(data)
