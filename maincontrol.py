@@ -10,9 +10,11 @@ def readSerial():
     ser = serial.Serial(SERIAL_PORT, SERIAL_RATE)
 
     while True:
-        data = ser.readline().decode("utf-8")
+        data = ser.readline().decode()
         print(data)
         file.write(data)
+        if data.startswith("J") == True:
+            break
 
     file.close()
 
