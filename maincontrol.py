@@ -7,7 +7,7 @@ def readSerial():
     ser = serial.Serial(port="/dev/ttyS0", baudrate=115200)
 
     while True:
-        data = ser.read(158)
+        data = ser.read(158).decode()
         dataString = str(data)
         file.write(dataString)
         # file.write("\n")
