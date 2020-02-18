@@ -24,4 +24,4 @@ def readSerial():
 
 
 readSerial()
-parseData()
+parseData("rocketdata.txt")
