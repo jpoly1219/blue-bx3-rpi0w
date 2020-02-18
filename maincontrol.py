@@ -1,5 +1,6 @@
 import serial
 import time
+from parsedata import parseData
 
 
 def readSerial():
@@ -23,3 +24,4 @@ def readSerial():
 
 
 readSerial()
+parseData()
