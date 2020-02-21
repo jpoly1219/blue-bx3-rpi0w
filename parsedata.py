@@ -1,3 +1,6 @@
+import datetime
+
+
 def parseData(textfile):
     data = open(textfile, "r")
     rocketDataStr = data.read()
@@ -18,6 +21,7 @@ def parseData(textfile):
 
     for dataPacket in rocketDataList:
         newData.write(dataPacket)
+        newData.write(datetime.datetime.now())
         newData.write("\n")
     
     data.close()
