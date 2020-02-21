@@ -1,3 +1,12 @@
+"""
+parsedata.py is basically a module that provides a single function parseData().
+The function accepts one parameter, "textfile", which is a file that the function
+will write to. The function will split the string of data when the rocket's flight state
+changes (shown as a single ASCII character in the list stateList). This function is 
+crucial, as the maincontrol.py only accepts rocket's flight data as a single bytestring, 
+and has no way of knowing when new data is updated.
+"""
+
 import datetime
 
 
@@ -21,7 +30,7 @@ def parseData(textfile):
 
     for dataPacket in rocketDataList:
         newData.write(dataPacket)
-        newData.write(datetime.datetime.now())
+        newData.write("," + datetime.datetime.now())
         newData.write("\n")
     
     data.close()

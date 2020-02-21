@@ -1,3 +1,10 @@
+"""
+maincontrol.py is responsible for establishing a serial connection with the rocket.
+The script will open port /dev/ttyS0 to accept rocket's flight data at 115200 8N1.
+There will be a constant stream of data, which will be decoded and read 158 bytes at a time.
+The script will then call parseData() from parsedata.py and write "rocketdata.txt".
+"""
+
 import serial
 import time
 from parsedata import parseData
