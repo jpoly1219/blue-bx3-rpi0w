@@ -7,8 +7,6 @@ crucial, as the maincontrol.py only accepts rocket's flight data as a single byt
 and has no way of knowing when new data is updated.
 """
 
-import datetime
-
 
 def parseData(textfile):
     data = open(textfile, "r")
@@ -30,7 +28,6 @@ def parseData(textfile):
 
     for dataPacket in rocketDataList:
         newData.write(dataPacket)
-        newData.write("," + datetime.datetime.now())
         newData.write("\n")
     
     data.close()
