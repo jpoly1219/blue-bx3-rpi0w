@@ -1,6 +1,7 @@
-#! /bin/bash
+#! /usr/bin/bash
 
-until "python3 testing.py"; do
-    echo "testing.py has crashed!"
-    sleep 1
+while true
+do
+    PROCESSNAME=`ps -f | grep "python3 testing.py"`
+    echo $PROCESSNAME
 done

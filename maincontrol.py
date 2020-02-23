@@ -21,7 +21,7 @@ def readSerial():
         # file.write("\n")
         if "D" in dataString:
             print("microgravity environment")
-        if "J" in dataString:
+        if "K" in dataString:
             print("rocket landed!")
             break
         # time.sleep(0.07)
