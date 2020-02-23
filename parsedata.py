@@ -12,7 +12,7 @@ def parseData(textfile):
     data = open(textfile, "r")
     rocketDataStr = data.read()
     
-    stateList = ["@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+    stateList = ["@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
     currentIndex = 0
 
     for char in rocketDataStr:

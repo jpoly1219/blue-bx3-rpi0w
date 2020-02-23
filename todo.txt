@@ -1,0 +1,17 @@
+TODO:
+
+Sensors to integrate:
+- temperature
+- humidity
+- accelerometer
+
+MOSFET control
+- GPIO, 3.3V
+- Current calculation
+
+MAYBE:
+
+FPGA
+- pi has a limited # of pins
+- fine control over LEDs
+- 
