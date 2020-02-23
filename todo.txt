@@ -4,14 +4,21 @@ Sensors to integrate:
 - temperature
 - humidity
 - accelerometer
+- test with mock data first
 
 MOSFET control
 - GPIO, 3.3V
-- Current calculation
+- current calculation
+
+Redundancy Script
+- Overcuring is fine
+- the LED should be constantly on, worst case scenario
 
 MAYBE:
 
 FPGA
 - pi has a limited # of pins
+- code will be painful to read and maintain if sensors connect
+    directly to the pi
 - fine control over LEDs
-- 
+- temperature sensor array for possible heatmap

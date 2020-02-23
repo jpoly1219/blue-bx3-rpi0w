@@ -1,5 +1,5 @@
 """
-parsedata.py is basically a module that provides a single function parseData().
+parsedata.py is a module that provides a single function parseData().
 The function accepts one parameter, "textfile", which is a file that the function
 will write to. The function will split the string of data when the rocket's flight state
 changes (shown as a single ASCII character in the list stateList). This function is 

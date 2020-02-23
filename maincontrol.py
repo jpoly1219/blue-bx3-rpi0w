@@ -7,7 +7,10 @@ The script will then call parseData() from parsedata.py and write "rocketdata.tx
 
 import serial
 import time
+import RPi.GPIO as GPIO
 from parsedata import parseData
+
+GPIO.setmode(GPIO.BOARD)
 
 
 def readSerial():
