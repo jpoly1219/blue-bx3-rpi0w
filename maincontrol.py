@@ -14,7 +14,7 @@ GPIO.setmode(GPIO.BOARD)
 
 
 def readSerial():
-    file = open("rocketdata.txt", "w")
+    file = open("rocketdata.txt", "a")
     ser = serial.Serial(port="/dev/ttyS0", baudrate=115200)
 
     while True:
