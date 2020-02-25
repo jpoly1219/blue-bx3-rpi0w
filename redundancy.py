@@ -8,6 +8,9 @@ import subprocess
 import time
 
 while True:
-    processRn = subprocess.run(["ps", "-ef", "|", "grep", "maincontrol.py"])
-    print(processRn)
+    p1 = subprocess.Popen(["ps", "-ef"], stdout=subprocess.PIPE)
+    p2 = subprocess.Popen(["grep", "maincontrol.py"], stdin=p1.stdout, stdout=subprocess.PIPE)
+    p1.stdout.close()
+    output = p2.communicate()[0]
+    print(output)
     time.sleep(1)
