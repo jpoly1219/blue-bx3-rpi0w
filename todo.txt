@@ -10,8 +10,9 @@ MOSFET control
 - GPIO, 3.3V
 - current calculation
 
-Redundancy Script
-- Overcuring is fine
+Redundancy Script (ALMOST DONE)
+- make the script start on boot
+- overcuring is fine
 - the LED should be constantly on, worst case scenario
 
 MAYBE:
@@ -22,3 +23,4 @@ FPGA
     directly to the pi
 - fine control over LEDs
 - temperature sensor array for possible heatmap
+- ask Steph!

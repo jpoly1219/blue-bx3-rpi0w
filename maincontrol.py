@@ -12,6 +12,7 @@ from parsedata import parseData
 
 GPIO.setmode(GPIO.BOARD)
 
+redundancyFlag = 0
 
 def readSerial():
     file = open("rocketdata.txt", "a")
@@ -35,3 +36,5 @@ def readSerial():
 
 readSerial()
 parseData("rocketdata.txt")
+
+redundancyFlag = 1
