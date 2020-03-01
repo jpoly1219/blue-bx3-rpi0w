@@ -16,7 +16,9 @@ GPIO.setmode(GPIO.BOARD)
 redundancyFlag = 0
 
 def readSerial():
-    os.remove("rocketdata.txt")
+    if os.path.exists("rocketdata.txt"):
+        os.remove("rocketdata.txt")
+    
     file = open("rocketdata.txt", "a")
     ser = serial.Serial(port="/dev/ttyGS0", baudrate=115200)
 
