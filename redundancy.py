@@ -25,10 +25,12 @@ while True:
         if os.path.exists("flag.txt"):
             flagData = open("flag.txt", "r")
             flagStr = flagData.read()
-            if flagStr == "1":
-                break
-            else:
-                subprocess.run(["sudo", "python3", "maincontrol.py"])
+        else:
+            flagStr = "0"
+        if flagStr == "1":
+            break
+        else:
+            subprocess.run(["sudo", "python3", "maincontrol.py"])
     else:
         pass
 
