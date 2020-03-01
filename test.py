@@ -3,7 +3,6 @@ import time
 from testing import lolz
 
 x = 0
-print(lolz)
 
 while x < 50:
     print(datetime.datetime.now())

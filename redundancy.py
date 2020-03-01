@@ -6,12 +6,8 @@ If it is not running, then it will restart maincontrol.py.
 import os
 import subprocess
 import time
-from maincontrol import redundancyFlag
 
 while True:
-    if redundancyFlag == 1:
-        break
-
     # run 'ps -ef | grep [m]aincontrol.py'
     # reason why we use [m] is because of the way grep deals with regex.
     # if we use just 'm', grep will return its own process even when
@@ -26,7 +22,12 @@ while True:
     
     # run 'sudo python3 maincontrol.py' if not running
     if outputD == "":
-        subprocess.run(["sudo", "python3", "maincontrol.py"])
+        flagData = open("flag.txt", "r")
+        flagStr = flagData.read()
+        if flagStr == "1":
+            break
+        else:
+            subprocess.run(["sudo", "python3", "maincontrol.py"])
     else:
         pass
 

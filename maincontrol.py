@@ -12,20 +12,20 @@ import RPi.GPIO as GPIO
 from parsedata import parseData
 
 GPIO.setmode(GPIO.BOARD)
+flag = open("flag.txt", "w")
 
-redundancyFlag = 0
 
 def readSerial():
     if os.path.exists("rocketdata.txt"):
         os.remove("rocketdata.txt")
     
-    file = open("rocketdata.txt", "a")
+    rocketdata = open("rocketdata.txt", "a")
     ser = serial.Serial(port="/dev/ttyGS0", baudrate=115200)
 
     while True:
         data = ser.read(158).decode()
         dataString = str(data)
-        file.write(dataString)
+        rocketdata.write(dataString)
         # file.write("\n")
         if "D" in dataString:
             print("microgravity environment")
@@ -35,10 +35,10 @@ def readSerial():
         # time.sleep(0.07)
     print("break!")
 
-    file.close()
+    rocketdata.close()
 
 
 readSerial()
 parseData("rocketdata.txt")
-
-redundancyFlag = 1
+flag.write("1")
+flag.close()
