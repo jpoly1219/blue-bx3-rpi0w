@@ -26,7 +26,7 @@ def parseData(textfile):
     rocketDataList = rocketDataStr.split("#")
     rocketDataList.pop(0)
     
-    newData = open("parsedata.txt", "w")
+    newData = open("/home/pi/Git Repositories/blue-bx3-rpi0w/parsedata.txt", "w")
 
     # write the split string into parsedata.txt
     for dataPacket in rocketDataList:

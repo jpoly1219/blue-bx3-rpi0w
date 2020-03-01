@@ -12,14 +12,14 @@ import RPi.GPIO as GPIO
 from parsedata import parseData
 
 GPIO.setmode(GPIO.BOARD)
-flag = open("flag.txt", "w")
+flag = open("/home/pi/Git Repositories/blue-bx3-rpi0w/flag.txt", "w")
 
 
 def readSerial():
-    if os.path.exists("rocketdata.txt"):
-        os.remove("rocketdata.txt")
+    if os.path.exists("/home/pi/Git Repositories/blue-bx3-rpi0w/rocketdata.txt"):
+        os.remove("/home/pi/Git Repositories/blue-bx3-rpi0w/rocketdata.txt")
     
-    rocketdata = open("rocketdata.txt", "a")
+    rocketdata = open("/home/pi/Git Repositories/blue-bx3-rpi0w/rocketdata.txt", "a")
     ser = serial.Serial(port="/dev/ttyGS0", baudrate=115200)
 
     while True:
@@ -39,6 +39,6 @@ def readSerial():
 
 
 readSerial()
-parseData("rocketdata.txt")
+parseData("/home/pi/Git Repositories/blue-bx3-rpi0w/rocketdata.txt")
 flag.write("1")
 flag.close()
