@@ -8,6 +8,12 @@ import subprocess
 import time
 
 while True:
+    if os.path.exists("flag.txt"):
+        flagData = open("flag.txt", "r")
+        flagStr = flagData.read()
+        if flagStr == "1":
+            break
+
     # run 'ps -ef | grep [m]aincontrol.py'
     # reason why we use [m] is because of the way grep deals with regex.
     # if we use just 'm', grep will return its own process even when
@@ -22,15 +28,7 @@ while True:
     
     # run 'sudo python3 maincontrol.py' if not running
     if outputD == "":
-        if os.path.exists("flag.txt"):
-            flagData = open("flag.txt", "r")
-            flagStr = flagData.read()
-        else:
-            flagStr = "0"
-        if flagStr == "1":
-            break
-        else:
-            subprocess.run(["sudo", "python3", "/home/pi/Git Repositories/blue-bx3-rpi0w/maincontrol.py"])
+        subprocess.run(["sudo", "python3", "/home/pi/Git Repositories/blue-bx3-rpi0w/maincontrol.py"])
     else:
         pass
 
