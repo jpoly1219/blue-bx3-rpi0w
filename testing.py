@@ -1,11 +1,10 @@
-import datetime
 import time
 
-x = 0
 
-while x < 50:
-    print(datetime.datetime.now())
-    time.sleep(0.5)
-    x += 1
+lolz = 0
 
-raise Exception("nyehhh")
+while lolz == 0:
+    print("lolz == 0")
+    time.sleep(1)
+
+print("lolz == 1")

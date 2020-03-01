@@ -5,6 +5,7 @@ There will be a constant stream of data, which will be decoded and read 158 byte
 The script will then call parseData() from parsedata.py and write "rocketdata.txt".
 """
 
+import os
 import serial
 import time
 import RPi.GPIO as GPIO
@@ -15,8 +16,9 @@ GPIO.setmode(GPIO.BOARD)
 redundancyFlag = 0
 
 def readSerial():
+    os.remove("rocketdata.txt")
     file = open("rocketdata.txt", "a")
-    ser = serial.Serial(port="/dev/ttyS0", baudrate=115200)
+    ser = serial.Serial(port="/dev/ttyGS0", baudrate=115200)
 
     while True:
         data = ser.read(158).decode()
