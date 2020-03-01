@@ -13,7 +13,7 @@ while True:
     # if we use just 'm', grep will return its own process even when
     # maincontrol.py is not running, which can be misleading.
     p1 = subprocess.Popen(["ps", "-ef"], stdout=subprocess.PIPE)
-    p2 = subprocess.Popen(["grep", "[m]aincontrol.py"], stdin=p1.stdout, stdout=subprocess.PIPE)
+    p2 = subprocess.Popen(["grep", "'[m]aincontrol.py'"], stdin=p1.stdout, stdout=subprocess.PIPE)
     p1.stdout.close()
     output = p2.communicate()[0]
 
