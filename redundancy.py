@@ -22,12 +22,13 @@ while True:
     
     # run 'sudo python3 maincontrol.py' if not running
     if outputD == "":
-        flagData = open("flag.txt", "r")
-        flagStr = flagData.read()
-        if flagStr == "1":
-            break
-        else:
-            subprocess.run(["sudo", "python3", "maincontrol.py"])
+        if os.path.exists("flag.txt"):
+            flagData = open("flag.txt", "r")
+            flagStr = flagData.read()
+            if flagStr == "1":
+                break
+            else:
+                subprocess.run(["sudo", "python3", "maincontrol.py"])
     else:
         pass
 
