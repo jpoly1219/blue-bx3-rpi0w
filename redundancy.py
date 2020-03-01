@@ -12,7 +12,10 @@ while True:
         flagData = open("flag.txt", "r")
         flagStr = flagData.read()
         if flagStr == "1":
+            print("flagstr == 1")
             break
+    else:
+        pass
 
     # run 'ps -ef | grep [m]aincontrol.py'
     # reason why we use [m] is because of the way grep deals with regex.
