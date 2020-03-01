@@ -30,7 +30,7 @@ while True:
         if flagStr == "1":
             break
         else:
-            subprocess.run(["sudo", "python3", "maincontrol.py"])
+            subprocess.run(["sudo", "python3", "/home/pi/Git Repositories/blue-bx3-rpi0w/maincontrol.py"])
     else:
         pass
 
